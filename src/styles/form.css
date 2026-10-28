@@ -1,0 +1,144 @@
+/* ───────── Formulario de contacto (cierre) ───────── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  width: min(28rem, 100%);
+  margin-top: var(--s-7);
+  text-align: left;
+}
+.contact-form__lead {
+  margin: 0 0 var(--s-1);
+  text-align: center;
+  font-size: var(--fs-sm);
+  color: var(--c-text-3);
+}
+.contact-form__row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.contact-form__row label {
+  font-family: var(--f-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--c-text-3);
+}
+.contact-form__opt {
+  text-transform: none;
+  letter-spacing: 0;
+  opacity: 0.8;
+}
+.contact-form input[type='text'],
+.contact-form textarea {
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-md);
+  padding: var(--s-3) var(--s-4);
+  color: var(--c-text);
+  font-family: var(--f-body);
+  font-size: var(--fs-md);
+  resize: vertical;
+  transition: border-color var(--t-fast);
+}
+.contact-form input[type='text']:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--c-amber-line);
+  box-shadow: 0 0 0 3px var(--c-amber-soft);
+}
+.contact-form__hp {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+.contact-form__check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-3);
+  font-size: var(--fs-sm);
+  color: var(--c-text-2);
+  cursor: pointer;
+}
+.contact-form__check input {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--c-amber);
+  flex-shrink: 0;
+}
+.contact-form__check a {
+  color: var(--c-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.contact-form__check a:hover {
+  color: var(--c-amber);
+}
+.contact-form .btn {
+  align-self: center;
+}
+.contact-form .cta-status[data-tone='error'] {
+  color: #e8795c;
+}
+.contact-form .cta-status[data-tone='ok'] {
+  color: #8fcf7a;
+}
+
+/* ───────── Selector de día/hora (reserva real) ───────── */
+.contact-form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+.booking-form__picker {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.booking-form__dates,
+.booking-form__horas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.booking-form__date,
+.booking-form__hora {
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-md);
+  padding: var(--s-2) var(--s-3);
+  color: var(--c-text-2);
+  font-family: var(--f-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color var(--t-fast), color var(--t-fast), background var(--t-fast);
+}
+.booking-form__date:hover,
+.booking-form__hora:hover {
+  border-color: var(--c-amber-line);
+  color: var(--c-text);
+}
+.booking-form__date[aria-pressed='true'],
+.booking-form__hora[aria-pressed='true'] {
+  background: var(--c-amber-soft);
+  border-color: var(--c-amber-line);
+  color: var(--c-amber);
+}
+.booking-form__selected {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--c-text-2);
+  min-height: 1.2em;
+}
+.booking-form__empty {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--c-text-3);
+}

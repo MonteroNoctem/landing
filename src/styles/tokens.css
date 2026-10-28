@@ -1,0 +1,67 @@
+/* Tokens de marca y sistema. Cualquier color, tipografía o espaciado sale de aquí. */
+:root {
+  /* Marca */
+  --c-black: #0b0b0c;
+  --c-amber: #d98014;
+  --c-bone: #f2efe9;
+
+  /* Derivados */
+  --c-bg: var(--c-black);
+  --c-surface: #121214;
+  --c-surface-2: #19191c;
+  --c-text: var(--c-bone);
+  --c-text-2: rgb(242 239 233 / 0.76);
+  --c-text-3: rgb(242 239 233 / 0.6);
+  --c-line: rgb(242 239 233 / 0.12);
+  --c-line-strong: rgb(242 239 233 / 0.22);
+  --c-amber-soft: rgb(217 128 20 / 0.14);
+  --c-amber-line: rgb(217 128 20 / 0.45);
+  --c-amber-glow: rgb(217 128 20 / 0.35);
+  --c-on-amber: var(--c-black);
+
+  /* Tipografía */
+  --f-display: 'IBM Plex Sans Condensed', 'Arial Narrow', sans-serif;
+  --f-body: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+
+  --fs-xs: 0.8125rem; /* 13px: mínimo para etiquetas */
+  --fs-sm: 0.9375rem;
+  --fs-md: 1.0625rem;
+  --fs-lg: clamp(1.125rem, 1rem + 0.5vw, 1.3125rem);
+  --fs-xl: clamp(1.5rem, 1.2rem + 1.2vw, 2.125rem);
+  --fs-2xl: clamp(2rem, 1.4rem + 2.6vw, 3.5rem);
+  --fs-hero: clamp(2.5rem, 1.5rem + 3.4vw, 4.5rem);
+
+  --lh-tight: 1.02;
+  --lh-snug: 1.2;
+  --lh-body: 1.55;
+  --tracking-label: 0.14em;
+
+  /* Espaciado */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4.5rem;
+  --s-9: clamp(5rem, 3rem + 7vw, 9rem);
+
+  --container: 76rem;
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+  --header-h: 4rem;
+
+  /* Forma */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-pill: 999px;
+
+  /* Movimiento */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-fast: 180ms;
+  --t-med: 420ms;
+  --t-slow: 800ms;
+}

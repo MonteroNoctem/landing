@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Montero Noctem · Atención y seguimiento comercial para inmobiliarias</title>
+    <meta
+      name="description"
+      content="Montero Noctem atiende, cualifica y acompaña a los contactos de tu inmobiliaria hasta el siguiente paso: respuesta, registro en el CRM, seguimiento y visita."
+    />
+    <meta name="theme-color" content="#0B0B0C" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://monteronoctem.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Montero Noctem" />
+    <meta property="og:url" content="https://monteronoctem.com/" />
+    <meta property="og:title" content="Montero Noctem · Cada contacto merece una respuesta" />
+    <meta
+      property="og:description"
+      content="Atiende, cualifica y acompaña a tus contactos hasta el siguiente paso, incluso cuando tu equipo está ocupado."
+    />
+    <meta property="og:image" content="https://monteronoctem.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Montero Noctem · Cada contacto merece una respuesta" />
+    <meta
+      name="twitter:description"
+      content="Atiende, cualifica y acompaña a tus contactos hasta el siguiente paso, incluso cuando tu equipo está ocupado."
+    />
+    <meta name="twitter:image" content="https://monteronoctem.com/og-image.png" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <script>document.documentElement.classList.add("js")</script>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <!-- A. CABECERA -->
+    <header class="site-header" data-header>
+      <div class="site-header__inner container">
+        <a class="brand" href="#inicio" aria-label="Montero Noctem, inicio">
+          <!-- Composición tipográfica provisional: falta el logotipo original -->
+          <span class="brand__mono" aria-hidden="true">MN</span>
+          <span class="brand__name" aria-hidden="true">Montero Noctem</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Principal">
+          <button
+            class="site-nav__toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+            data-nav-toggle
+          >
+            <span class="visually-hidden">Abrir menú</span>
+            <span class="site-nav__bars" aria-hidden="true"></span>
+          </button>
+          <ul class="site-nav__list" id="nav-menu" data-nav-menu>
+            <li><a href="#como-funciona">Cómo funciona</a></li>
+            <li><a href="#que-resuelve">Qué resuelve</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <a class="btn btn--primary btn--sm" href="#formulario-contacto">Agendar una llamada</a>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <!-- B. PRIMERA PANTALLA -->
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <canvas class="hero__trails" aria-hidden="true" data-trails></canvas>
+        <div class="hero__inner container">
+          <div class="hero__copy">
+            <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>Atención y seguimiento comercial para inmobiliarias</p>
+            <h1 class="hero__title" id="hero-title">
+              <span class="line">Cada contacto merece una respuesta.</span>
+              <span class="line">Cada oportunidad, <em>un seguimiento.</em></span>
+            </h1>
+            <p class="hero__lead">
+              Atiende, cualifica y acompaña a tus contactos hasta el siguiente paso, incluso cuando tu equipo está ocupado.
+            </p>
+            <div class="actions">
+              <a class="btn btn--primary" data-cta="agent" href="#contacto">
+                Probar el agente <span class="btn__arrow" aria-hidden="true">→</span>
+              </a>
+              <a class="btn btn--ghost" href="#formulario-contacto">Agendar una llamada</a>
+            </div>
+          </div>
+
+          <!-- Representación del sistema funcionando -->
+          <figure class="feed" aria-labelledby="feed-caption" data-feed>
+            <div class="feed__bar">
+              <span class="feed__title"><span class="brand__mono brand__mono--xs" aria-hidden="true">MN</span> Centro de mando</span>
+              <span class="feed__clock"><span class="pulse" aria-hidden="true"></span><span data-clock>23:47</span></span>
+            </div>
+            <ol class="feed__steps" aria-hidden="true">
+              <li>Responde</li><li>Cualifica</li><li>CRM</li><li>Próximo paso</li>
+            </ol>
+            <ul class="feed__list" data-feed-list>
+              <!-- Filas generadas por JS. Versión estática sin JS: -->
+              <li class="feed-row" data-state="3">
+                <span class="avatar">LA</span>
+                <span class="feed-row__who"><strong>Laura</strong> · Busca piso en Cambrils</span>
+                <span class="feed-row__status">Visita propuesta · jueves 18:00</span>
+              </li>
+              <li class="feed-row" data-state="2">
+                <span class="avatar">MA</span>
+                <span class="feed-row__who"><strong>Marc</strong> · Alquiler en Reus</span>
+                <span class="feed-row__status">Seguimiento programado</span>
+              </li>
+              <li class="feed-row" data-state="1">
+                <span class="avatar">CA</span>
+                <span class="feed-row__who"><strong>Carmen</strong> · Vender su casa en Salou</span>
+                <span class="feed-row__status">Datos recogidos</span>
+              </li>
+            </ul>
+            <figcaption class="demo-tag" id="feed-caption">Demostración · contactos y datos ficticios</figcaption>
+          </figure>
+        </div>
+        <a class="hero__scroll" href="#que-resuelve">
+          <span>Desliza</span><span class="hero__scroll-line" aria-hidden="true"></span>
+        </a>
+      </section>
+
+      <!-- C. EL PROBLEMA -->
+      <section class="problem section" id="que-resuelve" aria-labelledby="problem-title">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow eyebrow--index">01 · El problema</p>
+            <h2 class="section-title" id="problem-title">Las oportunidades no se pierden de golpe.<br /><span class="muted">Se enfrían.</span></h2>
+          </header>
+
+          <ul class="signals" data-reveal-group>
+            <li class="signal" style="--i: 0">
+              <span class="signal__meta">23:47 · Fuera de horario</span>
+              <p class="signal__text">Consultas que llegan cuando la oficina está cerrada.</p>
+            </li>
+            <li class="signal" style="--i: 1">
+              <span class="signal__meta">+4 h · Sin respuesta</span>
+              <p class="signal__text">Respuestas que se retrasan mientras el contacto pregunta en otra agencia.</p>
+            </li>
+            <li class="signal" style="--i: 2">
+              <span class="signal__meta">WhatsApp · Instagram · Web</span>
+              <p class="signal__text">Contactos repartidos entre canales y personas.</p>
+            </li>
+            <li class="signal" style="--i: 3">
+              <span class="signal__meta">Pendiente · Sin fecha</span>
+              <p class="signal__text">Seguimientos que quedan para «cuando haya un hueco».</p>
+            </li>
+            <li class="signal" style="--i: 4">
+              <span class="signal__meta">¿Zona? ¿Presupuesto? ¿Plazo?</span>
+              <p class="signal__text">Agentes repitiendo las mismas preguntas en cada conversación.</p>
+            </li>
+          </ul>
+
+          <div class="bridge" data-reveal>
+            <span class="bridge__line" aria-hidden="true"></span>
+            <p class="bridge__text">Montero Noctem reúne cada consulta en un mismo recorrido, <strong>de la primera respuesta al siguiente paso.</strong></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- D. EL SISTEMA EN ACCIÓN -->
+      <section class="flow" id="como-funciona" aria-labelledby="flow-title" data-flow>
+        <div class="flow__sticky">
+          <div class="container flow__container">
+            <header class="flow__head">
+              <div>
+                <p class="eyebrow eyebrow--index">02 · El sistema en acción</p>
+                <h2 class="section-title section-title--sm" id="flow-title">Así avanza una consulta.</h2>
+              </div>
+              <div class="flow__controls">
+                <span class="demo-tag">Demostración · datos ficticios</span>
+                <button class="chip-btn" type="button" data-flow-play hidden>Pausar</button>
+                <a class="chip-btn" href="#resultado">Saltar demostración</a>
+              </div>
+            </header>
+
+            <!-- Pasos: navegables por teclado; sin JS se leen como lista -->
+            <ol class="steps" data-steps>
+              <li class="step" data-step="0">
+                <button type="button" class="step__btn"><span class="step__n">01</span><span class="step__label">Entra</span></button>
+                <p class="step__text">Laura escribe por WhatsApp a las 23:47. Pregunta por un piso en Cambrils.</p>
+              </li>
+              <li class="step" data-step="1">
+                <button type="button" class="step__btn"><span class="step__n">02</span><span class="step__label">Atiende</span></button>
+                <p class="step__text">La consulta llega al núcleo de atención, sin esperar a que abra la oficina.</p>
+              </li>
+              <li class="step" data-step="2">
+                <button type="button" class="step__btn"><span class="step__n">03</span><span class="step__label">Responde</span></button>
+                <p class="step__text">Recibe respuesta en el momento y una pregunta para entender qué busca.</p>
+              </li>
+              <li class="step" data-step="3">
+                <button type="button" class="step__btn"><span class="step__n">04</span><span class="step__label">Cualifica</span></button>
+                <p class="step__text">Se completan zona, operación, plazo y financiación.</p>
+              </li>
+              <li class="step" data-step="4">
+                <button type="button" class="step__btn"><span class="step__n">05</span><span class="step__label">Registra</span></button>
+                <p class="step__text">El contacto entra en el CRM con su etapa y todo el contexto.</p>
+              </li>
+              <li class="step" data-step="5">
+                <button type="button" class="step__btn"><span class="step__n">06</span><span class="step__label">Siguiente paso</span></button>
+                <p class="step__text">Se propone una visita y tu equipo recibe el aviso con lo que necesita saber.</p>
+              </li>
+            </ol>
+
+            <div class="stage" data-stage>
+              <div class="stage__plane" data-stage-plane>
+                <svg class="stage__wires" aria-hidden="true" data-wires></svg>
+
+                <!-- Canales de entrada -->
+                <div class="zone zone--channels" data-zone="channels">
+                  <p class="zone__label"><span class="zone__n">A</span> Canales</p>
+                  <div class="channel" data-anchor="ch-whatsapp">
+                    <p class="channel__name"><span class="ch-dot ch-dot--wa" aria-hidden="true"></span>WhatsApp</p>
+                    <div class="slot" data-slot="whatsapp"></div>
+                  </div>
+                  <div class="channel" data-anchor="ch-instagram">
+                    <p class="channel__name"><span class="ch-dot ch-dot--ig" aria-hidden="true"></span>Instagram</p>
+                    <div class="slot" data-slot="instagram"></div>
+                  </div>
+                  <div class="channel" data-anchor="ch-form">
+                    <p class="channel__name"><span class="ch-dot ch-dot--web" aria-hidden="true"></span>Formulario web</p>
+                    <div class="slot" data-slot="form"></div>
+                  </div>
+                </div>
+
+                <!-- Núcleo de atención y cualificación -->
+                <div class="zone zone--core" data-zone="core" data-anchor="core">
+                  <p class="zone__label"><span class="zone__n">B</span> Atención y cualificación</p>
+                  <div class="core">
+                    <div class="slot slot--core" data-slot="core"></div>
+                    <div class="convo" data-convo aria-label="Conversación de demostración">
+                      <p class="convo__empty">Disponible a cualquier hora</p>
+                      <p class="bubble bubble--in" data-msg="0">Hola, ¿sigue disponible el piso de Cambrils? Lo buscamos para comprar.</p>
+                      <p class="bubble bubble--out" data-msg="1">¡Hola, Laura! Sí, sigue disponible. ¿Lo buscáis para vivir? ¿Para cuándo os gustaría mudaros?</p>
+                      <p class="bubble bubble--in" data-msg="2">Para vivir. Antes del verano, y con hipoteca ya preaprobada.</p>
+                    </div>
+                    <dl class="fields" data-fields>
+                      <div class="field" data-field="0"><dt>Zona</dt><dd>Cambrils</dd></div>
+                      <div class="field" data-field="1"><dt>Operación</dt><dd>Compra</dd></div>
+                      <div class="field" data-field="2"><dt>Plazo</dt><dd>Antes del verano</dd></div>
+                      <div class="field" data-field="3"><dt>Financiación</dt><dd>Preaprobada</dd></div>
+                    </dl>
+                  </div>
+                </div>
+
+                <!-- CRM con etapas -->
+                <div class="zone zone--crm" data-zone="crm" data-anchor="crm">
+                  <p class="zone__label"><span class="zone__n">C</span> CRM</p>
+                  <div class="crm">
+                    <div class="crm__col"><p class="crm__head">Nuevo</p><div class="slot" data-slot="crm-new"></div></div>
+                    <div class="crm__col"><p class="crm__head">Cualificado</p><div class="slot" data-slot="crm-qualified"></div></div>
+                    <div class="crm__col"><p class="crm__head">Seguimiento</p><div class="slot" data-slot="crm-follow"></div></div>
+                  </div>
+                </div>
+
+                <!-- Salida hacia el equipo o la agenda -->
+                <div class="zone zone--out" data-zone="out" data-anchor="out">
+                  <p class="zone__label"><span class="zone__n">D</span> Siguiente paso</p>
+                  <div class="out">
+                    <div class="out__box">
+                      <p class="out__head">Agenda</p>
+                      <div class="slot" data-slot="out-agenda"></div>
+                      <p class="out__note" data-out-note>Visita propuesta · jueves 18:00</p>
+                    </div>
+                    <div class="out__box">
+                      <p class="out__head">Equipo</p>
+                      <div class="slot" data-slot="out-team"></div>
+                      <p class="out__note" data-team-note>Aviso: Laura, con resumen y contexto</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ficha al pulsar un contacto -->
+              <div class="lead-card" role="dialog" aria-modal="false" aria-labelledby="lead-card-name" hidden data-lead-card>
+                <button class="lead-card__close" type="button" data-lead-close><span class="visually-hidden">Cerrar ficha</span>×</button>
+                <p class="demo-tag">Ficha de demostración</p>
+                <p class="lead-card__name" id="lead-card-name" data-lc="name"></p>
+                <p class="lead-card__need" data-lc="need"></p>
+                <dl class="lead-card__data" data-lc="data"></dl>
+              </div>
+            </div>
+
+            <p class="flow__hint" data-flow-hint>Pulsa un contacto para ver su ficha.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- E. RESULTADO PARA EL EQUIPO -->
+      <section class="results section" id="resultado" aria-labelledby="results-title" data-results>
+        <div class="container results__grid">
+          <div class="results__copy">
+            <header class="section-head">
+              <p class="eyebrow eyebrow--index">03 · Resultado para el equipo</p>
+              <h2 class="section-title" id="results-title">Tu equipo entra cuando aporta valor.<br /><span class="muted">Con todo el contexto.</span></h2>
+            </header>
+            <ol class="benefits">
+              <li class="benefit" data-benefit="organized">
+                <span class="benefit__n" aria-hidden="true">01</span>
+                <div><h3>Contactos organizados</h3><p>Cada consulta queda en el CRM, con su canal y su etapa.</p></div>
+              </li>
+              <li class="benefit" data-benefit="context">
+                <span class="benefit__n" aria-hidden="true">02</span>
+                <div><h3>Contexto antes de intervenir</h3><p>Sabes qué busca, dónde y para cuándo antes de llamar.</p></div>
+              </li>
+              <li class="benefit" data-benefit="followup">
+                <span class="benefit__n" aria-hidden="true">03</span>
+                <div><h3>Seguimientos programados</h3><p>Cada contacto tiene una fecha para el próximo mensaje.</p></div>
+              </li>
+              <li class="benefit" data-benefit="continuity">
+                <span class="benefit__n" aria-hidden="true">04</span>
+                <div><h3>Más continuidad en la atención</h3><p>La conversación sigue aunque cambie la persona o el horario.</p></div>
+              </li>
+              <li class="benefit" data-benefit="next">
+                <span class="benefit__n" aria-hidden="true">05</span>
+                <div><h3>Un siguiente paso claro</h3><p>Visita, llamada o seguimiento: cada oportunidad sabe qué viene después.</p></div>
+              </li>
+            </ol>
+          </div>
+
+          <aside class="record" aria-label="Ejemplo de ficha de contacto (demostración)">
+            <div class="record__card" data-record>
+              <div class="record__top">
+                <span class="avatar avatar--lg avatar--featured">LA</span>
+                <div>
+                  <p class="record__name">Laura</p>
+                  <p class="record__sub">Busca piso en Cambrils</p>
+                </div>
+                <span class="tag tag--amber" data-part="organized">Cualificado</span>
+              </div>
+              <dl class="record__rows">
+                <div data-part="organized"><dt>Canal</dt><dd>WhatsApp · 23:47</dd></div>
+                <div data-part="context"><dt>Busca</dt><dd>Compra · vivienda habitual</dd></div>
+                <div data-part="context"><dt>Plazo</dt><dd>Antes del verano</dd></div>
+                <div data-part="followup"><dt>Seguimiento</dt><dd>Martes · confirmar visita</dd></div>
+                <div data-part="continuity"><dt>Historial</dt><dd>3 mensajes · resumen listo</dd></div>
+              </dl>
+              <div class="record__next" data-part="next">
+                <span class="pulse" aria-hidden="true"></span>
+                <p><span>Siguiente paso</span>Visita jueves 18:00 · aviso enviado al equipo</p>
+              </div>
+            </div>
+            <p class="demo-tag">Demostración · datos ficticios</p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- F. CIERRE -->
+      <section class="closing" id="contacto" aria-labelledby="closing-title">
+        <div class="container closing__inner" data-reveal>
+          <p class="eyebrow"><span class="pulse" aria-hidden="true"></span><span data-clock>23:47</span> · Nueva consulta</p>
+          <h2 class="closing__title" id="closing-title">Tu próxima oportunidad puede llegar <em>cuando no estás.</em></h2>
+          <p class="closing__lead">Pruébalo como lo haría un cliente, o cuéntanos cómo trabaja tu inmobiliaria.</p>
+          <div class="actions actions--center">
+            <a class="btn btn--primary" data-cta="agent" href="#contacto">Probar el agente <span class="btn__arrow" aria-hidden="true">→</span></a>
+          </div>
+
+          <form class="contact-form booking-form" id="formulario-contacto" novalidate>
+            <p class="contact-form__lead">Elige un hueco libre y hablamos 30 min por videollamada.</p>
+
+            <div class="booking-form__picker">
+              <div class="booking-form__dates" data-date-tabs></div>
+              <div class="booking-form__horas" data-slots></div>
+              <p class="booking-form__selected" data-selected-slot></p>
+            </div>
+            <input type="hidden" name="fechaHora" />
+
+            <div class="contact-form__fields" data-booking-fields hidden>
+              <div class="contact-form__row">
+                <label for="cf-nombre">Nombre</label>
+                <input id="cf-nombre" name="nombre" type="text" autocomplete="name" required maxlength="200" />
+              </div>
+              <div class="contact-form__row">
+                <label for="cf-contacto">Email o teléfono</label>
+                <input id="cf-contacto" name="contacto" type="text" autocomplete="email" required maxlength="200" />
+              </div>
+              <div class="contact-form__row">
+                <label for="cf-agencia">Nombre de la agencia</label>
+                <input id="cf-agencia" name="agencia" type="text" maxlength="200" />
+              </div>
+              <div class="contact-form__row">
+                <label for="cf-num-agentes">¿Cuántos agentes/comerciales sois?</label>
+                <input id="cf-num-agentes" name="numAgentes" type="text" maxlength="100" />
+              </div>
+              <div class="contact-form__row">
+                <label for="cf-crm">¿Qué usáis ahora para gestionar los leads?</label>
+                <input id="cf-crm" name="crmActual" type="text" maxlength="300" />
+              </div>
+              <div class="contact-form__row">
+                <label for="cf-problema">¿Cuál es vuestro principal problema con los leads ahora? <span class="contact-form__opt">(opcional)</span></label>
+                <textarea id="cf-problema" name="problemaPrincipal" rows="3" maxlength="1000"></textarea>
+              </div>
+
+              <!-- Campo trampa para bots: invisible para personas. -->
+              <div class="contact-form__hp" aria-hidden="true">
+                <label for="cf-web">No rellenar</label>
+                <input id="cf-web" name="web" type="text" tabindex="-1" autocomplete="off" />
+              </div>
+
+              <label class="contact-form__check">
+                <input id="cf-privacidad" name="aceptaPrivacidad" type="checkbox" required />
+                <span>He leído y acepto la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacidad</a></span>
+              </label>
+
+              <button type="submit" class="btn btn--primary" data-form-submit>Reservar videollamada</button>
+            </div>
+            <p class="cta-status" data-form-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div class="lockup">
+          <span class="brand__mono brand__mono--lg" aria-hidden="true">MN</span>
+          <span class="lockup__name">Montero Noctem</span>
+          <span class="lockup__tag">Continuidad comercial para inmobiliarias</span>
+        </div>
+        <p class="site-footer__legal">© <span data-year>2026</span> Montero Noctem · <a href="/privacidad.html">Política de privacidad</a> · <a href="/terminos.html">Condiciones del servicio</a> · <a href="/eliminar-datos.html">Eliminación de datos</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
