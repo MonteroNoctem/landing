@@ -91,10 +91,9 @@
               Atiende, cualifica y acompaña a tus contactos hasta el siguiente paso, incluso cuando tu equipo está ocupado.
             </p>
             <div class="actions">
-              <a class="btn btn--primary" data-cta="agent" href="#contacto">
-                Probar el agente <span class="btn__arrow" aria-hidden="true">→</span>
+              <a class="btn btn--primary" href="#formulario-contacto">
+                Agendar una llamada <span class="btn__arrow" aria-hidden="true">→</span>
               </a>
-              <a class="btn btn--ghost" href="#formulario-contacto">Agendar una llamada</a>
             </div>
           </div>
 
@@ -363,60 +362,120 @@
         <div class="container closing__inner" data-reveal>
           <p class="eyebrow"><span class="pulse" aria-hidden="true"></span><span data-clock>23:47</span> · Nueva consulta</p>
           <h2 class="closing__title" id="closing-title">Tu próxima oportunidad puede llegar <em>cuando no estás.</em></h2>
-          <p class="closing__lead">Pruébalo como lo haría un cliente, o cuéntanos cómo trabaja tu inmobiliaria.</p>
-          <div class="actions actions--center">
-            <a class="btn btn--primary" data-cta="agent" href="#contacto">Probar el agente <span class="btn__arrow" aria-hidden="true">→</span></a>
-          </div>
+          <p class="closing__lead">Cuéntanos un poco sobre tu inmobiliaria y buscamos un hueco para hablar.</p>
 
-          <form class="contact-form booking-form" id="formulario-contacto" novalidate>
-            <p class="contact-form__lead">Elige un hueco libre y hablamos 30 min por videollamada.</p>
+          <form class="contact-form booking-form" id="formulario-contacto" novalidate data-step-form>
+            <ol class="form-steps" data-form-steps aria-hidden="true">
+              <li class="is-active" data-form-step-dot="0"><span>1</span></li>
+              <li data-form-step-dot="1"><span>2</span></li>
+              <li data-form-step-dot="2"><span>3</span></li>
+            </ol>
 
-            <div class="booking-form__picker">
-              <div class="booking-form__dates" data-date-tabs></div>
-              <div class="booking-form__horas" data-slots></div>
-              <p class="booking-form__selected" data-selected-slot></p>
-            </div>
-            <input type="hidden" name="fechaHora" />
-
-            <div class="contact-form__fields" data-booking-fields hidden>
+            <!-- Paso 1: quién eres -->
+            <fieldset class="form-step" data-form-step="0">
+              <legend class="visually-hidden">Tus datos</legend>
               <div class="contact-form__row">
                 <label for="cf-nombre">Nombre</label>
                 <input id="cf-nombre" name="nombre" type="text" autocomplete="name" required maxlength="200" />
               </div>
               <div class="contact-form__row">
-                <label for="cf-contacto">Email o teléfono</label>
-                <input id="cf-contacto" name="contacto" type="text" autocomplete="email" required maxlength="200" />
+                <label for="cf-correo">Email</label>
+                <input id="cf-correo" name="contacto" type="email" autocomplete="email" required maxlength="200" />
               </div>
               <div class="contact-form__row">
                 <label for="cf-agencia">Nombre de la agencia</label>
                 <input id="cf-agencia" name="agencia" type="text" maxlength="200" />
               </div>
-              <div class="contact-form__row">
-                <label for="cf-num-agentes">¿Cuántos agentes/comerciales sois?</label>
-                <input id="cf-num-agentes" name="numAgentes" type="text" maxlength="100" />
+              <div class="form-step__nav">
+                <button type="button" class="btn btn--primary" data-step-next>Siguiente <span class="btn__arrow" aria-hidden="true">→</span></button>
               </div>
-              <div class="contact-form__row">
-                <label for="cf-crm">¿Qué usáis ahora para gestionar los leads?</label>
-                <input id="cf-crm" name="crmActual" type="text" maxlength="300" />
-              </div>
-              <div class="contact-form__row">
-                <label for="cf-problema">¿Cuál es vuestro principal problema con los leads ahora? <span class="contact-form__opt">(opcional)</span></label>
-                <textarea id="cf-problema" name="problemaPrincipal" rows="3" maxlength="1000"></textarea>
+            </fieldset>
+
+            <!-- Paso 2: 4 preguntas de cualificación, opción múltiple -->
+            <fieldset class="form-step" data-form-step="1" hidden>
+              <legend class="visually-hidden">Sobre tu inmobiliaria</legend>
+
+              <div class="form-question" data-question>
+                <p class="form-question__label">¿Cuántos agentes/comerciales sois?</p>
+                <div class="form-question__opts" role="radiogroup" aria-label="¿Cuántos agentes/comerciales sois?">
+                  <button type="button" class="chip-opt" data-opt>Solo yo</button>
+                  <button type="button" class="chip-opt" data-opt>2-5</button>
+                  <button type="button" class="chip-opt" data-opt>6-15</button>
+                  <button type="button" class="chip-opt" data-opt>Más de 15</button>
+                </div>
+                <input type="hidden" name="numAgentes" required />
               </div>
 
-              <!-- Campo trampa para bots: invisible para personas. -->
-              <div class="contact-form__hp" aria-hidden="true">
-                <label for="cf-web">No rellenar</label>
-                <input id="cf-web" name="web" type="text" tabindex="-1" autocomplete="off" />
+              <div class="form-question" data-question>
+                <p class="form-question__label">¿Qué usáis ahora para gestionar los leads?</p>
+                <div class="form-question__opts" role="radiogroup" aria-label="¿Qué usáis ahora para gestionar los leads?">
+                  <button type="button" class="chip-opt" data-opt>Nada, lo llevamos a mano</button>
+                  <button type="button" class="chip-opt" data-opt>WhatsApp y Excel</button>
+                  <button type="button" class="chip-opt" data-opt>Un CRM (Idealista, Fotocasa Pro…)</button>
+                  <button type="button" class="chip-opt" data-opt>Un CRM propio</button>
+                </div>
+                <input type="hidden" name="crmActual" required />
               </div>
 
-              <label class="contact-form__check">
-                <input id="cf-privacidad" name="aceptaPrivacidad" type="checkbox" required />
-                <span>He leído y acepto la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacidad</a></span>
-              </label>
+              <div class="form-question" data-question>
+                <p class="form-question__label">¿Cuál es vuestro principal problema con los leads ahora?</p>
+                <div class="form-question__opts" role="radiogroup" aria-label="¿Cuál es vuestro principal problema con los leads ahora?">
+                  <button type="button" class="chip-opt" data-opt>No respondemos a tiempo</button>
+                  <button type="button" class="chip-opt" data-opt>Se nos enfrían o se pierden</button>
+                  <button type="button" class="chip-opt" data-opt>No hay seguimiento constante</button>
+                  <button type="button" class="chip-opt" data-opt>La gestión manual nos quita tiempo</button>
+                </div>
+                <input type="hidden" name="problemaPrincipal" required />
+              </div>
 
-              <button type="submit" class="btn btn--primary" data-form-submit>Reservar videollamada</button>
-            </div>
+              <div class="form-question" data-question>
+                <p class="form-question__label">¿Para cuándo os gustaría tenerlo en marcha?</p>
+                <div class="form-question__opts" role="radiogroup" aria-label="¿Para cuándo os gustaría tenerlo en marcha?">
+                  <button type="button" class="chip-opt" data-opt>Lo antes posible</button>
+                  <button type="button" class="chip-opt" data-opt>Este mes</button>
+                  <button type="button" class="chip-opt" data-opt>Este trimestre</button>
+                  <button type="button" class="chip-opt" data-opt>Solo estoy mirando opciones</button>
+                </div>
+                <input type="hidden" name="urgencia" required />
+              </div>
+
+              <div class="form-step__nav">
+                <button type="button" class="btn btn--ghost" data-step-back>← Atrás</button>
+                <button type="button" class="btn btn--primary" data-step-next>Siguiente <span class="btn__arrow" aria-hidden="true">→</span></button>
+              </div>
+            </fieldset>
+
+            <!-- Paso 3: calendario, al final -->
+            <fieldset class="form-step" data-form-step="2" hidden>
+              <legend class="visually-hidden">Elige día y hora</legend>
+              <p class="contact-form__lead">Elige un hueco libre y hablamos 30 min por videollamada.</p>
+
+              <div class="booking-form__picker">
+                <div class="booking-form__dates" data-date-tabs></div>
+                <div class="booking-form__horas" data-slots></div>
+                <p class="booking-form__selected" data-selected-slot></p>
+              </div>
+              <input type="hidden" name="fechaHora" />
+
+              <div class="contact-form__fields" data-booking-fields hidden>
+                <!-- Campo trampa para bots: invisible para personas. -->
+                <div class="contact-form__hp" aria-hidden="true">
+                  <label for="cf-web">No rellenar</label>
+                  <input id="cf-web" name="web" type="text" tabindex="-1" autocomplete="off" />
+                </div>
+
+                <label class="contact-form__check">
+                  <input id="cf-privacidad" name="aceptaPrivacidad" type="checkbox" required />
+                  <span>He leído y acepto la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacidad</a></span>
+                </label>
+              </div>
+
+              <div class="form-step__nav">
+                <button type="button" class="btn btn--ghost" data-step-back>← Atrás</button>
+                <button type="submit" class="btn btn--primary" data-form-submit>Reservar videollamada</button>
+              </div>
+            </fieldset>
+
             <p class="cta-status" data-form-status role="status" aria-live="polite"></p>
           </form>
         </div>

@@ -142,3 +142,101 @@
   font-size: var(--fs-sm);
   color: var(--c-text-3);
 }
+
+/* ───────── Formulario en pasos ───────── */
+.form-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  margin: 0 0 var(--s-2);
+  padding: 0;
+  list-style: none;
+}
+.form-steps li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--c-line);
+  color: var(--c-text-3);
+  font-family: var(--f-mono);
+  font-size: var(--fs-xs);
+  transition: border-color var(--t-fast), color var(--t-fast), background var(--t-fast);
+}
+.form-steps li + li {
+  position: relative;
+}
+.form-steps li + li::before {
+  content: '';
+  position: absolute;
+  right: 100%;
+  width: var(--s-2);
+  height: 1px;
+  background: var(--c-line);
+}
+.form-steps li.is-active {
+  border-color: var(--c-amber-line);
+  color: var(--c-amber);
+  background: var(--c-amber-soft);
+}
+.form-steps li.is-done {
+  border-color: var(--c-amber-line);
+  color: var(--c-amber);
+}
+
+.form-step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.form-step__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-3);
+}
+.form-step__nav .btn {
+  align-self: auto;
+}
+
+.form-question {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.form-question__label {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--c-text);
+}
+.form-question__opts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.chip-opt {
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-md);
+  padding: var(--s-2) var(--s-3);
+  color: var(--c-text-2);
+  font-family: var(--f-body);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  transition: border-color var(--t-fast), color var(--t-fast), background var(--t-fast);
+}
+.chip-opt:hover {
+  border-color: var(--c-amber-line);
+  color: var(--c-text);
+}
+.chip-opt[aria-pressed='true'] {
+  background: var(--c-amber-soft);
+  border-color: var(--c-amber-line);
+  color: var(--c-amber);
+}

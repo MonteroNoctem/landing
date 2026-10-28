@@ -13,7 +13,6 @@ import './styles/flow.css';
 import './styles/form.css';
 
 import { initHeader } from './components/header.js';
-import { initCtas } from './components/cta.js';
 import { initReveal } from './components/reveal.js';
 import { initTrails } from './components/trails.js';
 import { initFeed } from './components/feed.js';
@@ -33,7 +32,6 @@ const safe = (name, fn) => {
 };
 
 safe('header', () => initHeader(document.querySelector('[data-header]')));
-safe('cta', () => initCtas());
 safe('reveal', () => initReveal());
 safe('trails', () => initTrails(document.querySelector('[data-trails]')));
 safe('feed', () => initFeed(document.querySelector('[data-feed]')));
