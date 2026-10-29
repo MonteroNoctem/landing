@@ -383,9 +383,27 @@
                 <input id="cf-correo" name="contacto" type="email" autocomplete="email" required maxlength="200" />
               </div>
               <div class="contact-form__row">
+                <label for="cf-telefono">WhatsApp</label>
+                <input id="cf-telefono" name="telefono" type="tel" autocomplete="tel" required maxlength="50" placeholder="+34 600 00 00 00" />
+              </div>
+              <div class="contact-form__row">
                 <label for="cf-agencia">Nombre de la agencia</label>
                 <input id="cf-agencia" name="agencia" type="text" maxlength="200" />
               </div>
+
+              <div class="contact-form__fields">
+                <!-- Campo trampa para bots: invisible para personas. -->
+                <div class="contact-form__hp" aria-hidden="true">
+                  <label for="cf-web">No rellenar</label>
+                  <input id="cf-web" name="web" type="text" tabindex="-1" autocomplete="off" />
+                </div>
+
+                <label class="contact-form__check">
+                  <input id="cf-privacidad" name="aceptaPrivacidad" type="checkbox" required />
+                  <span>He leído y acepto la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacidad</a></span>
+                </label>
+              </div>
+
               <div class="form-step__nav">
                 <button type="button" class="btn btn--primary" data-step-next>Siguiente <span class="btn__arrow" aria-hidden="true">→</span></button>
               </div>
@@ -450,34 +468,40 @@
               <legend class="visually-hidden">Elige día y hora</legend>
               <p class="contact-form__lead">Elige un hueco libre y hablamos 30 min por videollamada.</p>
 
-              <div class="booking-form__picker">
-                <div class="booking-form__dates" data-date-tabs></div>
-                <div class="booking-form__horas" data-slots></div>
-                <p class="booking-form__selected" data-selected-slot></p>
-              </div>
+              <button type="button" class="btn btn--ghost" data-open-calendar>
+                Elegir fecha y hora <span class="btn__arrow" aria-hidden="true">→</span>
+              </button>
+              <p class="booking-form__selected" data-selected-slot>Aún no has elegido horario.</p>
               <input type="hidden" name="fechaHora" />
-
-              <div class="contact-form__fields" data-booking-fields hidden>
-                <!-- Campo trampa para bots: invisible para personas. -->
-                <div class="contact-form__hp" aria-hidden="true">
-                  <label for="cf-web">No rellenar</label>
-                  <input id="cf-web" name="web" type="text" tabindex="-1" autocomplete="off" />
-                </div>
-
-                <label class="contact-form__check">
-                  <input id="cf-privacidad" name="aceptaPrivacidad" type="checkbox" required />
-                  <span>He leído y acepto la <a href="/privacidad.html" target="_blank" rel="noopener">política de privacidad</a></span>
-                </label>
-              </div>
 
               <div class="form-step__nav">
                 <button type="button" class="btn btn--ghost" data-step-back>← Atrás</button>
-                <button type="submit" class="btn btn--primary" data-form-submit>Reservar videollamada</button>
+                <button type="submit" class="btn btn--primary" data-form-submit disabled>Reservar videollamada</button>
               </div>
             </fieldset>
 
             <p class="cta-status" data-form-status role="status" aria-live="polite"></p>
           </form>
+
+          <!-- Modal del calendario: ventana a parte, más grande y legible -->
+          <div class="calendar-modal" data-calendar-modal hidden>
+            <div class="calendar-modal__backdrop" data-calendar-close></div>
+            <div class="calendar-modal__panel" role="dialog" aria-modal="true" aria-labelledby="calendar-modal-title">
+              <div class="calendar-modal__head">
+                <p class="calendar-modal__title" id="calendar-modal-title">Elige día y hora</p>
+                <button type="button" class="calendar-modal__close" data-calendar-close>
+                  <span class="visually-hidden">Cerrar</span>×
+                </button>
+              </div>
+              <div class="booking-form__picker booking-form__picker--modal">
+                <div class="booking-form__dates" data-date-tabs></div>
+                <div class="booking-form__horas" data-slots></div>
+              </div>
+              <div class="calendar-modal__foot">
+                <button type="button" class="btn btn--primary" data-calendar-confirm disabled>Confirmar horario</button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>

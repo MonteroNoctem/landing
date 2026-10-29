@@ -31,6 +31,8 @@
   opacity: 0.8;
 }
 .contact-form input[type='text'],
+.contact-form input[type='email'],
+.contact-form input[type='tel'],
 .contact-form textarea {
   background: var(--c-surface);
   border: 1px solid var(--c-line);
@@ -43,6 +45,8 @@
   transition: border-color var(--t-fast);
 }
 .contact-form input[type='text']:focus,
+.contact-form input[type='email']:focus,
+.contact-form input[type='tel']:focus,
 .contact-form textarea:focus {
   outline: none;
   border-color: var(--c-amber-line);
@@ -239,4 +243,105 @@
   background: var(--c-amber-soft);
   border-color: var(--c-amber-line);
   color: var(--c-amber);
+}
+
+/* ───────── Modal del calendario: ventana a parte, más grande y clara ───────── */
+.calendar-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s-4);
+}
+.calendar-modal[hidden] {
+  display: none;
+}
+.calendar-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgb(11 11 12 / 0.82);
+  backdrop-filter: blur(3px);
+}
+.calendar-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(34rem, 100%);
+  max-height: 85vh;
+  overflow-y: auto;
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg, 16px);
+  padding: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  box-shadow: 0 20px 60px rgb(0 0 0 / 0.5);
+}
+.calendar-modal__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+}
+.calendar-modal__title {
+  margin: 0;
+  font-family: var(--f-display, var(--f-body));
+  font-size: var(--fs-lg, 1.25rem);
+  color: #fff;
+}
+.calendar-modal__close {
+  background: transparent;
+  border: 1px solid var(--c-line);
+  border-radius: 999px;
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: #fff;
+  cursor: pointer;
+  transition: border-color var(--t-fast), color var(--t-fast);
+}
+.calendar-modal__close:hover {
+  border-color: var(--c-amber-line);
+  color: var(--c-amber);
+}
+.calendar-modal__foot {
+  display: flex;
+  justify-content: center;
+}
+
+/* Dentro del modal: números más grandes y en blanco, más fáciles de pulsar */
+.booking-form__picker--modal .booking-form__dates,
+.booking-form__picker--modal .booking-form__horas {
+  gap: var(--s-3);
+}
+.booking-form__picker--modal .booking-form__date,
+.booking-form__picker--modal .booking-form__hora {
+  padding: var(--s-3) var(--s-4);
+  font-size: var(--fs-md);
+  font-family: var(--f-body);
+  text-transform: none;
+  letter-spacing: 0;
+  color: #fff;
+  min-width: 4.5rem;
+  text-align: center;
+  border-radius: var(--r-md);
+}
+.booking-form__picker--modal .booking-form__date[aria-pressed='true'],
+.booking-form__picker--modal .booking-form__hora[aria-pressed='true'] {
+  background: var(--c-amber-soft);
+  border-color: var(--c-amber-line);
+  color: var(--c-amber);
+}
+
+@media (max-width: 480px) {
+  .calendar-modal__panel {
+    padding: var(--s-4);
+  }
+  .booking-form__picker--modal .booking-form__date,
+  .booking-form__picker--modal .booking-form__hora {
+    flex: 1 1 calc(50% - var(--s-3));
+  }
 }
