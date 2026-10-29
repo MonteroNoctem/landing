@@ -412,6 +412,7 @@
             <!-- Paso 2: 4 preguntas de cualificación, opción múltiple -->
             <fieldset class="form-step" data-form-step="1" hidden>
               <legend class="visually-hidden">Sobre tu inmobiliaria</legend>
+              <p class="form-question__progress" data-question-progress>Pregunta 1 de 4</p>
 
               <div class="form-question" data-question>
                 <p class="form-question__label">¿Cuántos agentes/comerciales sois?</p>
@@ -482,6 +483,16 @@
 
             <p class="cta-status" data-form-status role="status" aria-live="polite"></p>
           </form>
+
+          <!-- Pantalla de agradecimiento: sustituye al formulario al reservar -->
+          <div class="booking-thanks" data-booking-thanks hidden>
+            <p class="booking-thanks__eyebrow"><span class="pulse" aria-hidden="true"></span>Reserva confirmada</p>
+            <h3 class="booking-thanks__title">Nos vemos pronto, <span data-thanks-name>—</span>.</h3>
+            <p class="booking-thanks__when" data-thanks-when></p>
+            <p class="booking-thanks__note">Mientras otros siguen esperando una respuesta, tu oportunidad ya está en marcha. Así trabaja Montero Noctem: de noche o de día, nada se queda a medias.</p>
+            <p class="booking-thanks__email" data-thanks-email hidden>Te hemos enviado la confirmación y el enlace de la videollamada por email — revisa también la carpeta de spam.</p>
+            <button type="button" class="btn btn--ghost" data-thanks-reset>Reservar otra llamada</button>
+          </div>
 
           <!-- Modal del calendario: ventana a parte, más grande y legible -->
           <div class="calendar-modal" data-calendar-modal hidden>

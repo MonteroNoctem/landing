@@ -209,6 +209,16 @@
   align-self: auto;
 }
 
+.form-question__progress {
+  margin: 0 0 var(--s-1);
+  font-family: var(--f-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--c-text-3);
+  text-align: center;
+}
+
 .form-question {
   display: flex;
   flex-direction: column;
@@ -243,6 +253,52 @@
   background: var(--c-amber-soft);
   border-color: var(--c-amber-line);
   color: var(--c-amber);
+}
+
+/* ───────── Pantalla de agradecimiento tras reservar ───────── */
+.booking-thanks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-3);
+  width: min(28rem, 100%);
+  margin-top: var(--s-7);
+  text-align: center;
+}
+.booking-thanks[hidden] {
+  display: none;
+}
+.booking-thanks__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  margin: 0;
+  font-family: var(--f-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--c-amber);
+}
+.booking-thanks__title {
+  margin: 0;
+  font-family: var(--f-display, var(--f-body));
+  font-size: var(--fs-xl, 1.5rem);
+  color: #fff;
+}
+.booking-thanks__when {
+  margin: 0;
+  font-size: var(--fs-md);
+  color: var(--c-text-2);
+}
+.booking-thanks__note {
+  margin: var(--s-2) 0 0;
+  font-size: var(--fs-sm);
+  color: var(--c-text-2);
+}
+.booking-thanks__email {
+  margin: 0;
+  font-size: var(--fs-xs);
+  color: var(--c-text-3);
 }
 
 /* ───────── Modal del calendario: ventana a parte, más grande y clara ───────── */

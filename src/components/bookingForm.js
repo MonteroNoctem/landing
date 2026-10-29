@@ -43,10 +43,32 @@ export function initBookingForm(form) {
   const confirmBtn = modal?.querySelector('[data-calendar-confirm]');
   const closeBtns = modal ? [...modal.querySelectorAll('[data-calendar-close]')] : [];
 
+  const thanksBox = form.parentElement?.querySelector('[data-booking-thanks]');
+  const thanksName = thanksBox?.querySelector('[data-thanks-name]');
+  const thanksWhen = thanksBox?.querySelector('[data-thanks-when]');
+  const thanksEmail = thanksBox?.querySelector('[data-thanks-email]');
+  const thanksResetBtn = thanksBox?.querySelector('[data-thanks-reset]');
+
   if (!steps.length || !fechaHoraInput || !modal || !dateTabs || !slotsContainer) return;
 
   let formId = nuevoFormId();
   let leadParcialGuardado = false;
+
+  /* ── Preguntas del Paso 2, de una en una ── */
+  const questions = [...form.querySelectorAll('[data-question]')];
+  const questionProgress = form.querySelector('[data-question-progress]');
+  let currentQuestion = 0;
+
+  function showQuestion(i) {
+    currentQuestion = i;
+    questions.forEach((q, idx) => { q.hidden = idx !== i; });
+    if (questionProgress) questionProgress.textContent = `Pregunta ${i + 1} de ${questions.length}`;
+  }
+
+  function primeraPreguntaSinResponder() {
+    const idx = questions.findIndex((q) => !q.querySelector('input[type="hidden"]').value);
+    return idx === -1 ? questions.length - 1 : idx;
+  }
 
   const setStatus = (text, tone) => {
     statusEl.textContent = text;
@@ -63,6 +85,7 @@ export function initBookingForm(form) {
       d.classList.toggle('is-active', idx === i);
       d.classList.toggle('is-done', idx < i);
     });
+    if (i === 1) showQuestion(primeraPreguntaSinResponder());
     const focusable = steps[i].querySelector('input, button');
     focusable?.focus({ preventScroll: true });
     form.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -132,11 +155,18 @@ export function initBookingForm(form) {
     });
   });
   form.querySelectorAll('[data-step-back]').forEach((btn) => {
-    btn.addEventListener('click', () => { setStatus(''); goToStep(current - 1); });
+    btn.addEventListener('click', () => {
+      setStatus('');
+      if (current === 1 && currentQuestion > 0) {
+        showQuestion(currentQuestion - 1);
+        return;
+      }
+      goToStep(current - 1);
+    });
   });
 
-  /* ── Preguntas de opción múltiple (chips) ── */
-  form.querySelectorAll('[data-question]').forEach((q) => {
+  /* ── Preguntas de opción múltiple (chips), de una en una ── */
+  questions.forEach((q, idx) => {
     const opts = [...q.querySelectorAll('[data-opt]')];
     const hidden = q.querySelector('input[type="hidden"]');
     opts.forEach((opt) => {
@@ -145,6 +175,11 @@ export function initBookingForm(form) {
         opts.forEach((o) => o.setAttribute('aria-pressed', 'false'));
         opt.setAttribute('aria-pressed', 'true');
         hidden.value = opt.textContent.trim();
+        // Avanza sola a la siguiente pregunta, con un pequeño respiro para
+        // que se vea la selección antes de cambiar.
+        if (idx < questions.length - 1) {
+          setTimeout(() => showQuestion(idx + 1), 180);
+        }
       });
     });
   });
@@ -306,14 +341,9 @@ export function initBookingForm(form) {
 
       if (res.ok) {
         const etiqueta = selectedLabel.textContent.replace('Elegido: ', '');
-        setStatus(`¡Reservado! Nos vemos el ${etiqueta}. Te hemos enviado la confirmación por email.`, 'ok');
-        form.reset();
-        form.querySelectorAll('[data-opt]').forEach((o) => o.setAttribute('aria-pressed', 'false'));
-        selectedLabel.textContent = 'Aún no has elegido horario.';
-        disponibilidadCargada = false;
+        mostrarAgradecimiento(datos.nombre, etiqueta, datos.contacto);
         formId = nuevoFormId();
         leadParcialGuardado = false;
-        goToStep(0);
       } else if (res.status === 429) {
         setStatus('Ya hemos recibido una reserva tuya hace un momento — dale un minuto y vuelve a intentarlo.', 'error');
         submitBtn.disabled = false;
@@ -335,6 +365,31 @@ export function initBookingForm(form) {
       submitBtn.disabled = false;
     }
   });
+
+  function mostrarAgradecimiento(nombre, etiqueta, contacto) {
+    form.hidden = true;
+    if (!thanksBox) return;
+    thanksBox.hidden = false;
+    if (thanksName) thanksName.textContent = nombre || '';
+    if (thanksWhen) thanksWhen.textContent = etiqueta ? `Tu videollamada queda agendada: ${etiqueta}.` : '';
+    if (thanksEmail) thanksEmail.hidden = !EMAIL_RE.test(contacto || '');
+    thanksBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function resetFormulario() {
+    form.reset();
+    form.hidden = false;
+    if (thanksBox) thanksBox.hidden = true;
+    form.querySelectorAll('[data-opt]').forEach((o) => o.setAttribute('aria-pressed', 'false'));
+    selectedLabel.textContent = 'Aún no has elegido horario.';
+    fechaHoraInput.value = '';
+    submitBtn.disabled = true;
+    disponibilidadCargada = false;
+    setStatus('');
+    goToStep(0);
+  }
+
+  thanksResetBtn?.addEventListener('click', resetFormulario);
 
   goToStep(0);
 }
